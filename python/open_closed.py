@@ -21,6 +21,27 @@ BETTER
 # class SuperHero:
 # create a new version without breaking OCP
 
+# Clase de poderes
+class PowerManager:
+    def __init__(self, skills_array):
+        self.skills = skills_array
+
+    def execute(self):
+        if not self.skills:
+            return "no tiene habilidades asignadas."
+        return "usando " + " y ".join(self.skills)
+
+# La clase Padre (SuperHero)
+class SuperHero:
+    def __init__(self, name, skills_list):
+        self.name = name
+        self.super_poder = PowerManager(skills_list)
+
+    def activar_superPoder(self):
+        return f"{self.name} está {self.super_poder.execute()}"
+        
+# Hago que el nombre y las habilidades del SuperHero las elija el usuario que instancia, cosa de que si quiere hacer un 
+# SuperHero nuevo llamado SuperMono que puede programar, lo pueda hacer.
 
 
 # running process
